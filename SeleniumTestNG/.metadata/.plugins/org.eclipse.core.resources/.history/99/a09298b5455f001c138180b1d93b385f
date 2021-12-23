@@ -1,0 +1,61 @@
+package ForTest;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.LocalFileDetector;
+import org.openqa.selenium.remote.RemoteWebElement;
+import org.openqa.selenium.support.ui.Select;
+
+public class Testing {
+
+	
+
+	public static void main(String[] args) throws Throwable    {
+		
+	//declaration and instantiation of objects/variables
+		System.setProperty("webdriver.chrome.driver","E:\\RAJAN KUMAR JHA\\Testing\\Selenium\\New folder\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		String url = "https://employee.hyenaapps.com/#/";
+	    driver.get(url);
+	      
+	      
+	   // Enter username
+        driver.findElement(By.xpath("//input[@id = 'username']")).sendKeys("baby8266");
+        
+     // Enter password
+        driver.findElement(By.xpath("//input[@id = 'password']")).sendKeys("Etoapp@123"); 
+        
+     // Login
+        driver.findElement(By.xpath("//button[@id = 'loginButton']")).click(); 
+        
+        // Navigate to My Profile
+        Thread.sleep (6000);       
+      // driver.navigate().to("https://employee.hyenaapps.com/#/dashboard/employee/profile/familyInfo"); 
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("//a[@id= 'userDropdown']"))); 
+        executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("/html/body/app-root/app-main-view/body/div[1]/div/header/div[3]/ul/li[5]/div/a[2]"))); 
+        
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);       
+        driver.findElement(By.xpath("//i[@ class = 'eto-edit-alt text-primary']")).click();
+        
+        //Click on edit profile pic
+      // driver.findElement(By.xpath(" //button [@ class = 'btn btn-light custom-file-upload']")).click();
+       
+//        //Selet profile picture
+//        WebElement E1 = driver.findElement(By.xpath(" /html/body/app-root/app-main-view/body/div[1]/div/div/div/app-my-profile/div[1]/div/div/div[3]/button[1]/label")); 
+//	    ((RemoteWebElement) E1 ).setFileDetector(new LocalFileDetector()); 
+//	    E1.click();
+//	    E1.sendKeys("E:\\RAJAN KUMAR JHA\\Employee App “ETO-App”\\Screenshot 2021-10-20 174407.png");
+	     
+        driver.findElement(By.xpath("//button [@ class = 'btn btn-light custom-file-upload']")).click();
+        driver.findElement(By.xpath("//button [@ class = 'btn btn-light custom-file-upload']")).sendKeys("E:\\\\RAJAN KUMAR JHA\\\\Employee App “ETO-App”\\\\Screenshot 2021-10-20 174407.png");
+	     System.out.println("done");
+	}
+}
+ 
