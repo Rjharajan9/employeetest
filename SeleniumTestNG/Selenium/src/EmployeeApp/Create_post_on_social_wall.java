@@ -1,6 +1,7 @@
 package EmployeeApp;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -31,16 +32,21 @@ public class Create_post_on_social_wall {
             
         // Navigate to social wall
         Thread.sleep (5000);
-        String clickl = Keys.chord(Keys.CONTROL,Keys.ENTER);
- 		driver.findElement(By.xpath("/html/body/app-root/app-main-view/body/div[1]/div/div/div/app-walls/div/div/ul/li[3]/a")).sendKeys(clickl);
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("//a[@id ='socialWall-tab']")));
+      
+        
+//        String clickl = Keys.chord(Keys.CONTROL,Keys.ENTER);
+// 		driver.findElement(By.xpath("/html/body/app-root/app-main-view/body/div[1]/div/div/div/app-walls/div/div/ul/li[3]/a")).sendKeys(clickl);
          		 
 		 //Click on create post
 		 Thread.sleep (5000);	
-		 driver.findElement(By.xpath("//div [@id ='descs']")).click();
+		 executor.executeScript("arguments[0].click();", driver.findElement(By.xpath("//div [@id ='descs']")));
 		 
          //Enter post title and post discription 
 		 //Thread.sleep (3000);
 	     driver.findElement(By.xpath("//input [@name ='PostSocialTitle']")).sendKeys("Tested by Automation");
+	     
 	     driver.findElement(By.xpath("//input [@name ='PostSocialTitle']")).sendKeys(Keys.TAB,"Tested by Automation");
 	     
 	     
@@ -49,16 +55,20 @@ public class Create_post_on_social_wall {
 	     ((RemoteWebElement) El ).setFileDetector(new LocalFileDetector()); 
 	     El.sendKeys("C:\\Users\\Rajan J\\Downloads\\Pip _ A Short Animated Film by Southeastern Guide Dogs.mp4");
 	     
-//	     //Click on preview 
-	     driver.findElement(By.xpath("/html/body/app-root/app-main-view/body/div[1]/div/div/div/app-walls/div/div/div/div[3]/app-social/div[6]/div/div/div[3]/div[2]/button[2]")).click(); 
-//	     
-//	     driver.findElement(By.xpath("/html/body/app-root/app-main-view/body/div[1]/div/div/div/app-walls/div/div/div/div[3]/app-social/div[7]/div/div/div/button")).click(); 
-//	     
-//	     //Request for pin
-//	     driver.findElement(By.xpath("/html/body/app-root/app-main-view/body/div[1]/div/div/div/app-walls/div/div/div/div[3]/app-social/div[5]/div/div/div[3]/div[1]/div/label/span[1]")).click();
+	     //Click on preview 
+	     Thread.sleep (5000);
+	     driver.findElement(By.xpath("/html/body/app-root/app-main-view/body/div[1]/div/div/div/app-walls/div/div/div/div[3]/app-social/div[6]/div/div/div[3]/div[2]/button[2]")).click();     
+	     driver.findElement(By.xpath("/html/body/app-root/app-main-view/body/div[1]/div/div/div/app-walls/div/div/div/div[3]/app-social/div[8]/div/div/div/button")).click();     
+		   
+	     
+	     
+	     //Request for pin
+	     Thread.sleep (5000);
+	     driver.findElement(By.xpath("/html/body/app-root/app-main-view/body/div[1]/div/div/div/app-walls/div/div/div/div[3]/app-social/div[6]/div/div/div[3]/div[1]/div/label/span[1]")).click();
 	     
 	     //Create Post
-//	     driver.findElement(By.xpath("/html/body/app-root/app-main-view/body/div[1]/div/div/div/app-walls/div/div/div/div[3]/app-social/div[5]/div/div/div[3]/div[2]/button[3]")).click();	     
+	     Thread.sleep (5000);
+	     driver.findElement(By.xpath("/html/body/app-root/app-main-view/body/div[1]/div/div/div/app-walls/div/div/div/div[3]/app-social/div[6]/div/div/div[3]/div[2]/button[3]")).click();	     
 	     
 	}
 

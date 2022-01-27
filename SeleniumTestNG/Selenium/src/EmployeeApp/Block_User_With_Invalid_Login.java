@@ -25,10 +25,8 @@ public class Block_User_With_Invalid_Login {
        // driver.findElement(By.xpath("//span[@class = 'login-font toggle-password eto-eye-off']")).click();
         
      // Login
+        for (int i =0; i <= 5; i++) {
         driver.findElement(By.xpath("//button[@id = 'loginButton']")).click();
     }
-
-
 	}
-
-
+}

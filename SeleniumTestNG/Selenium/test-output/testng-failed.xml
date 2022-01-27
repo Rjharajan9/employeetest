@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestNG.Login_Employee">
+      <class name="TestNG.UpdatingFamilyMember">
         <methods>
+          <include name="AddDateOfBirth"/>
           <include name="tearDown"/>
           <include name="setup"/>
-          <include name="withoutUsernameAndPassword"/>
         </methods>
-      </class> <!-- TestNG.Login_Employee -->
+      </class> <!-- TestNG.UpdatingFamilyMember -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

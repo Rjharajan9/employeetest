@@ -17,12 +17,13 @@ public class Login_Employee {
 	@BeforeMethod
 	public void setup() 
 	{
-		System.setProperty("webdriver.chrome.driver","E:\\RAJAN KUMAR JHA\\Testing\\Selenium\\chromedriver_win32\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","E:\\RAJAN KUMAR JHA\\Testing\\Selenium\\New folder\\chromedriver_win32\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		//driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 	//	driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
-		driver.get("https://employee.hyenademos.com/#/");
+		String url = "https://employee.hyenaapps.com/#/";
+	    driver.get(url);		
 	}
 	
 	
@@ -33,11 +34,9 @@ public class Login_Employee {
 	public void invalidPassword() 
 	{
 		// Enter valid username
-        driver.findElement(By.xpath("//input[@id = 'username']")).click();
         driver.findElement(By.xpath("//input[@id = 'username']")).sendKeys("shsu6333");
      
      // Enter invalid password
-        driver.findElement(By.xpath("//input[@id = 'password']")).click();
         driver.findElement(By.xpath("//input[@id = 'password']")).sendKeys("Etoapp@1234"); 
         driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
       
@@ -111,7 +110,7 @@ public class Login_Employee {
 	{
 		// Enter username
         driver.findElement(By.xpath("//input[@id = 'username']")).click();
-        driver.findElement(By.xpath("//input[@id = 'username']")).sendKeys("Raku1674");
+        driver.findElement(By.xpath("//input[@id = 'username']")).sendKeys("baby8266");
         
      // Enter password
         driver.findElement(By.xpath("//input[@id = 'password']")).click();

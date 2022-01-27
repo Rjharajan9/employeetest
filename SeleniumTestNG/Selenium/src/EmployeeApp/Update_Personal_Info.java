@@ -49,7 +49,7 @@ public class Update_Personal_Info {
         // Update gender
         Select gender = new Select(driver.findElement(By.xpath("//select [@id = 'editGender']")));
 //		gender.selectByVisibleText("Male");
-		gender.selectByIndex(3);
+		gender.selectByIndex(3); 
                 
       //Submit Marital Status first time
 		/*Select status = new Select(driver.findElement(By.xpath("/html/body/app-root/app-main-view/body/div[1]/div/div/div/app-my-profile/div[2]/div[2]/app-personal-info/div/div/form/div/div/form[2]/div/div/select")));
@@ -98,7 +98,9 @@ public class Update_Personal_Info {
 	//	driver.findElement(By.xpath("//button[@id = 'PersonalEdit']")).click();
 				
 		// updating the personal info
-		driver.findElement(By.xpath("//button [@id= 'personalUpdate']")).click();        
+		driver.findElement(By.xpath("//button [@id= 'personalUpdate']")).click();    
+		
+		
 	     	     
 	}
 
